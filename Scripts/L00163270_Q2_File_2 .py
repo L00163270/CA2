@@ -28,10 +28,6 @@ def get_headers(web_response):
     print( page_title )
 """ Function is to find title of the page"""
 
-def get_headlines(web_response):
-    page_title = web_response.find_all( "h2" ).text
-    print( page_title )
-"""Function is  find header h2 in the page"""
 
 def get_countapache(web_response):
     count = web_response.find_all( string=lambda text: "apache2" in text.lower() )
