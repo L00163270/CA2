@@ -25,9 +25,9 @@ def ssh_connection():
         session.exec_command( "sudo -S apt-get install curl" )
 
         connection = session.invoke_shell()
-        connection.send( "mkdir test\n" )  # unix command to list
-        connection.send('mkdir test/test1\n')
-        connection.send('mkdir test/test2\n')
+        connection.send( "mkdir labs\n" )  # unix command to list
+        connection.send('mkdir labs/lab1\n')
+        connection.send('mkdir labs/lab2\n')
         time.sleep( 1 )
         vm_output = connection.recv( 65535 )
         print( vm_output )
