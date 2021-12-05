@@ -22,6 +22,8 @@ def ssh_connection():
         session = paramiko.SSHClient()
         session.set_missing_host_key_policy( paramiko.AutoAddPolicy() )
         session.connect(IP, username='l00163270', password='Somno@123' )
+        session.exec_command( "sudo -S apt-get install curl" )
+
         connection = session.invoke_shell()
         connection.send( "mkdir test\n" )  # unix command to list
         connection.send('mkdir test/test1\n')
